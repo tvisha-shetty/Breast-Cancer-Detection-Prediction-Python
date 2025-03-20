@@ -1,6 +1,8 @@
 # tvishashetty
 Breast Cancer Prediction
 This repository presents a project on breast cancer detection using machine learning techniques. It leverages clinical features of breast cancer cases to predict whether a tumor is benign or malignant. The focus is on thorough data preprocessing, feature selection, and visualization to gain meaningful insights from the dataset.
+
+
 Problem Statement: This project focuses on developing a predictive model to classify breast cancer cases as benign or malignant based on relevant medical features. Leveraging historical patient data, the objective is to create a reliable tool that assists medical professionals in diagnosing breast cancer early, improving the chances of successful treatment and recovery. Breast cancer remains one of the most significant health risks, and early detection plays a crucial role in reducing mortality rates.
 
 Project Objective:
@@ -19,4 +21,3 @@ Conclusion:
 
 In conclusion, the development of this predictive model represents a critical step toward enhancing early detection of breast cancer. The best metric here would be the Recall for Malignant Test Data, as this ensures the model correctly identifies a high proportion of actual malignant cases. By focusing on accurate tumor classification, this project underscores the transformative role that machine learning and data analysis can play in healthcare.
 
-Dataset link: Breast Cancer Wisconsin Data
