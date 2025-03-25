@@ -99,11 +99,26 @@ score = pd.DataFrame({
 # Print the evaluation metrics
 print(score)
 
+from sklearn.ensemble import RandomForestClassifier
+# ML Model - 2 Implementation
+rf_model = RandomForestClassifier(random_state=0)
+rf_score = evaluate_model(rf_model, X_train, X_test, y_train, y_test)
+score['Random Forest'] = rf_score
+print(score)
+
+
+import xgboost as xgb
+# ML Model - 3 Implementation
+xgb_model = xgb.XGBClassifier()
+# Visualizing evaluation Metric Score chart
+xgb_score = evaluate_model(xgb_model, X_train, X_test, y_train, y_test)
+score['XGB'] = xgb_score
+print(score)
 
 # computing the number of correct and incorrect predictions across the two classes
 # Confusion Matrix
-cm_train = confusion_matrix(y_train, lr_model.predict(X_train))
-cm_test = confusion_matrix(y_test, lr_model.predict(X_test))
+cm_train = confusion_matrix(y_train, xgb_model.predict(X_train))
+cm_test = confusion_matrix(y_test, xgb_model.predict(X_test))
 
 #first subplot for training data and second subplot for testing data 
 fig, ax = plt.subplots(1, 2, figsize=(12, 6))
@@ -121,22 +136,6 @@ ax[1].set_ylabel("True")
 #adjusting layout tp prevent overlapping of subplots
 plt.tight_layout()
 plt.show()
-
-from sklearn.ensemble import RandomForestClassifier
-# ML Model - 2 Implementation
-rf_model = RandomForestClassifier(random_state=0)
-rf_score = evaluate_model(rf_model, X_train, X_test, y_train, y_test)
-score['Random Forest'] = rf_score
-print(score)
-
-
-import xgboost as xgb
-# ML Model - 3 Implementation
-xgb_model = xgb.XGBClassifier()
-# Visualizing evaluation Metric Score chart
-xgb_score = evaluate_model(xgb_model, X_train, X_test, y_train, y_test)
-score['XGB'] = xgb_score
-print(score)
 
 '''Random Forest consistently performs well across all metrics in both training and testing phases, 
 making it a strong candidate for the most reliable model in this case.
