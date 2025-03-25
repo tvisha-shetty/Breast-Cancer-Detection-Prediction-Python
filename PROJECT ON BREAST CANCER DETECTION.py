@@ -117,8 +117,8 @@ print(score)
 
 # computing the number of correct and incorrect predictions across the two classes
 # Confusion Matrix
-cm_train = confusion_matrix(y_train, xgb_model.predict(X_train))
-cm_test = confusion_matrix(y_test, xgb_model.predict(X_test))
+cm_train = confusion_matrix(y_train, rf_model.predict(X_train))
+cm_test = confusion_matrix(y_test, rf_model.predict(X_test))
 
 #first subplot for training data and second subplot for testing data 
 fig, ax = plt.subplots(1, 2, figsize=(12, 6))
